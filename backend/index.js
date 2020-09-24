@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const movies = require("./db/movies.json");
+const { SERVER_PORT } = require("./config/config");
 
 const app = express();
 
@@ -19,4 +20,6 @@ app.get("/movies", (req, res) => {
   }
 });
 
-app.listen(3002);
+app.listen(SERVER_PORT, () => {
+  console.log(`Server Up At Port ${SERVER_PORT}`);
+});
